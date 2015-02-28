@@ -57,14 +57,6 @@ function parseImage (image) {
 
 
 
-//document.getElementById("demo").innerHTML = decode(250, 255, 255);
-//var testImage = [255, 0, 0, 1, 255, 255, 255, 1];
-//var newImage = [249,0,1,1,253,255,255,1];
-//document.getElementById("demo").innerHTML = applyMessage("A", testImage);
-//document.getElementById("demo").innerHTML = parseImage(applyMessage("hi", testImage));
-
-
-
 
 
 
