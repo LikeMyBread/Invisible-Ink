@@ -27,18 +27,33 @@ a:hover {
 	text-decoration: underline;
 }
 
-.big .blurb {
+.canvas_container {
+	overflow: scroll;
+	max-width: 70%;
+	max-height: 500px;
+}
+
+.content {
+	display: none;
+	float: left;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding-left: 230px;
+}
+
+#main.big {
+	font-size: 24px;
+	line-height: 30px;
+}
+
+#main.big .blurb {
 	text-align: center;
 	width: 50%;
 	margin: auto;
 }
 
-.big {
-	font-size: 24px;
-	line-height: 30px;
-}
-
-.big h1 {
+#main.big h1 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 100px;
@@ -48,13 +63,13 @@ a:hover {
 	text-align: center;
 }
 
-.big #navigation {
+#main.big #navigation {
 	width: 60%;
 	margin: 50px 20%;
 	height: 200px;
 }
 
-.big #navigation .button {
+#main.big #navigation .button {
 	display: block;
 	font-size: 50px;
 	letter-spacing: 2px;
@@ -68,12 +83,12 @@ a:hover {
 	background: #95a5a6;
 }
 
-.big #navigation .button:hover {
+#main.big #navigation .button:hover {
 	background: #34495e;
 	color: #fff;
 }
 
-.big #footer {
+#main.big #footer {
 	text-align: center;
 	font-size: 18px;
 	line-height: 24px;
@@ -82,6 +97,62 @@ a:hover {
 	height: 50px;
 }
 
+#main.side {
+  font-size: 16px;
+  line-height: 24px;
+  width: 200px;
+  height: 100%;
+  float: left;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #95a5a6;
+}
+
+#main.side .blurb {
+  display: none;
+}
+
+#main.side h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
+}
+
+#main.side #navigation {
+  width: 100%;
+  float: left;
+}
+
+#main.side #navigation .button {
+  display: block;
+  font-size: 20px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  float: left;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  background: #95a5a6;
+}
+
+#main.side #navigation .button:hover {
+  background: #34495e;
+  color: #fff;
+}
+
+#main.side #footer {
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+}
 
 p {
 	margin: 1em 0;

@@ -1,8 +1,8 @@
 window.onload = function (e) {
     // Checking for allowed file upload scenarios
-    var file = document.getElementById('file');
-    var canvas = document.getElementById('image');
-    var upload = document.getElementById('upload');
+    var file = document.getElementById('encode_file');
+    var canvas = document.getElementById('encode_image');
+    var upload = document.getElementById('encode_upload');
     var ctx = canvas.getContext('2d');
 
     var invertColors = function (e) {
@@ -43,11 +43,6 @@ window.onload = function (e) {
         checkFileValid(file);
         handleImage(event);
     }, false);
-
-    var uploader = document.getElementById("uploader");
-    uploader.addEventListener("submit", function(event) {
-        var formData = new FormData(uploader);
-    }, false);
 };
 
 var allowedExts = ['jpg', 'jpeg', 'png', 'gif'];
@@ -70,5 +65,5 @@ var checkFileValid = function (file) {
 }
 
 var showError = function (error) {
-    document.getElementById('upload_error').innerHTML = error;
+    document.getElementById('encode_upload_error').innerHTML = error;
 }

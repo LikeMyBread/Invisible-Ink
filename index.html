@@ -20,7 +20,7 @@
 </head> 
 
 <body> 
-<div id="main" class="big">
+<div id="main" class="side">
 	<h1><a href="index.html">Invisible Ink</a></h1>
 	<p class="blurb">Hide text inside of images. Find hidden text inside of images. </p>
 
@@ -35,17 +35,27 @@
 
 	<p id="footer">A project by <a href="http://mikebradley.me/">Mike Bradley</a> and <a href="http://tiffzhang.com/">Tiff Zhang</a>. See the source on <a href="https://github.com/LikeMyBread/Invisible-Ink">Github</a>. </p>
 </div>
-<div id="encode">
-	<input type="file" name="file" id="file" />
+<div id="encode" class="content">
+	<input type="file" name="file" id="encode_file" />
 		<textarea name="text" id="text"></textarea>
-		<input type="submit" name="submit" value="Submit" id="upload" />
+		<input type="submit" name="submit" value="Submit" id="encode_upload" />
 
-	<div class="error" id="upload_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>
+	<div class="error" id="encode_upload_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>
 
-	<canvas id="image"></canvas>
+	<div class="canvas_container">
+		<canvas id="encode_image"></canvas>
+	</div>
 </div>
 
-<div id="decode">
+<div id="decode" class="content">
+	<input type="file" name="file" id="decode_file" />
+		<input type="submit" name="submit" value="Submit" id="decode_upload" />
+
+	<div class="error" id="decode_upload_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>
+
+	<div class="canvas-container">
+		<canvas id="decode_image"></canvas>
+	</div>
 </div>
 
 </body>
