@@ -1,4 +1,6 @@
 window.onload = function (e) {
+    var download = document.getElementById('download_encoded');
+
     var encode_text = document.getElementById("encode_text");
     var decode_text = document.getElementById("decode_text");
     var encode_handler = function (imageData, canvas, ctx) {
@@ -19,7 +21,7 @@ window.onload = function (e) {
     var decode_link = document.getElementById("decode_link");
 
     var encode = new Context("encode", "encode_error", "encode_image", "encode_file",
-        "encode_submit", encode_handler);
+        "encode_submit", encode_handler, "download_encoded");
 
     var decode = new Context("decode", "decode_error", "decode_image", "decode_file",
         "decode_submit", decode_handler);
@@ -38,7 +40,7 @@ window.onload = function (e) {
     
 };
 
-function Context (id, error_id, canvas_id, file_id, submit_id, submit_callback) {
+function Context (id, error_id, canvas_id, file_id, submit_id, submit_callback, download_id) {
     var container = document.getElementById(id);
     var errorContainer = document.getElementById(error_id);
     var extensions = ['jpg', 'jpeg', 'png', 'gif'];
@@ -46,6 +48,14 @@ function Context (id, error_id, canvas_id, file_id, submit_id, submit_callback) 
     var file = document.getElementById(file_id);
     var submit = document.getElementById(submit_id);
     var ctx = canvas.getContext('2d');
+
+    if (download_id) {
+        var download = document.getElementById(download_id);
+        download.addEventListener('mouseover', function (e) {
+            var dataURL = canvas.toDataURL('image/png');
+            this.href = dataURL;
+        });
+    }
 
     file.addEventListener("change", function(event) {
         var file = this.files[0];
