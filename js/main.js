@@ -5,6 +5,9 @@ window.onload = function (e) {
     var decode_text = document.getElementById("decode_text");
     var encode_handler = function (imageData, canvas, ctx) {
         var text = encode_text.value;
+        if (!text) {
+            text = encode_text.innerHTML;
+        }
         imageData.data = applyMessage(text, imageData.data);
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -14,6 +17,7 @@ window.onload = function (e) {
     var decode_handler = function (imageData, canvas, ctx) {
         var text = parseImage(imageData.data);
         decode_text.value = text;
+        decode_text.innerHTML = text;
     };
 
     var menu = document.getElementById("main");
