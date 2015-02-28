@@ -28,10 +28,11 @@ a:hover {
 }
 
 .canvas_container {
-	overflow: scroll;
 	max-width: 70%;
 	max-height: 500px;
+	overflow: auto;
 }
+
 
 .content {
 	display: none;
