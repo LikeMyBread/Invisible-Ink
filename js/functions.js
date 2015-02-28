@@ -11,8 +11,8 @@ function encode (r, g, b, character) {
 }
 
 //Extracts a stored character from a single pixel
-function decode (r, g, b) {
-    if (r % 8 > 4) {
+function decode (r, g, b, a) {
+    if (r % 8 > 4 || a == 0) {
         return "";
     };
     mBlue = b % 8;
@@ -29,12 +29,14 @@ function nullOutR (r) {
 
 //Apply a message to an image, changes the image in place and returns the image
 function applyMessage (message, image) {
+    var j = 0;
     for (var i = 0; i < image.length / 4; i++) {
-        if (i < message.length) {
-            newPixel = encode(image[i * 4], image[i * 4 + 1], image[i * 4 + 2], message[i]);
+        if (i < message.length && image[i * 4 + 3] != 0) {
+            newPixel = encode(image[i * 4], image[i * 4 + 1], image[i * 4 + 2], message[j]);
             image[i * 4] = newPixel[0];
             image[i * 4 + 1] = newPixel[1];
             image[i * 4 + 2] = newPixel[2];
+            j++;
         } else {
             image[i * 4] = nullOutR(image[i * 4]);
         }
@@ -46,7 +48,7 @@ function applyMessage (message, image) {
 function parseImage (image) {
     message = "";
     for (var i = 0; i < image.length / 4; i++) {
-        message += decode(image[i * 4], image[i * 4 + 1], image[i * 4 + 2]);
+        message += decode(image[i * 4], image[i * 4 + 1], image[i * 4 + 2], image[i * 4 + 3]);
     }
     return message;
 }
