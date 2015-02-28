@@ -1,0 +1,51 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+ 
+<head> 
+<title>Invisible Ink</title>
+<meta name="author" content="Mike Bradley and Tiff Zhang" />
+<meta name="description" content="A steganography system to enable hiding data inside images. " />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta http-equiv="Content-Script-Type" content="text/javascript" /> 
+<meta http-equiv="Content-Style-Type" content="text/css" />  
+
+<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="css/css.css" />
+<script src="js/main.js" type="text/javascript"></script>
+
+</head> 
+
+<body> 
+<div id="main" class="big">
+	<h1>Invisible Ink</h1>
+	<p>Encode and decode text using images. </p>
+
+	<div id="navigation">
+		<div class="button">
+			Encode
+		</div>
+		<div class="button">
+			Decode
+		</div>
+	</div>
+	<p>A project by <a href="http://mikebradley.me/">Mike Bradley</a> and <a href="http://tiffzhang.com/">Tiff Zhang</a>. See the source on <a href="https://github.com/LikeMyBread/Invisible-Ink">Github</a>. </p>
+</div>
+<div id="encode">
+	<input type="file" name="file" id="file" />
+		<textarea name="text" id="text"></textarea>
+		<input type="submit" name="submit" value="Submit" id="upload" />
+
+	<div class="error" id="upload_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>
+
+	<canvas id="image"></canvas>
+</div>
+
+<div id="decode">
+</div>
+
+</body>
+</html>
