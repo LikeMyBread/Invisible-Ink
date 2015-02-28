@@ -1,14 +1,17 @@
 window.onload = function (e) {
-    var invertColors = function (imageData, canvas, ctx) {
-        var pixels = imageData.data;
-        var numPixels = imageData.width * imageData.height;
-        for (var i = 0; i < numPixels; i++) {
-            pixels[i*4] = 255 - pixels[i*4]; // Red
-            pixels[i*4+1] = 255 - pixels[i*4+1]; // Green
-            pixels[i*4+2] = 255 - pixels[i*4+2]; // Blue
-        };
+    var encode_text = document.getElementById("encode_text");
+    var decode_text = document.getElementById("decode_text");
+    var encode_handler = function (imageData, canvas, ctx) {
+        var text = encode_text.value;
+        imageData.data = applyMessage(text, imageData.data);
+
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.putImageData(imageData, 0, 0);
+    };
+
+    var decode_handler = function (imageData, canvas, ctx) {
+        var text = parseImage(imageData.data);
+        decode_text.value = text;
     };
 
     var menu = document.getElementById("main");
@@ -16,10 +19,10 @@ window.onload = function (e) {
     var decode_link = document.getElementById("decode_link");
 
     var encode = new Context("encode", "encode_error", "encode_image", "encode_file",
-        "encode_submit", invertColors);
+        "encode_submit", encode_handler);
 
     var decode = new Context("decode", "decode_error", "decode_image", "decode_file",
-        "decode_submit", invertColors);
+        "decode_submit", decode_handler);
 
     encode_link.addEventListener("click", function (event) {
         menu.className = "side";
