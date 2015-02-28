@@ -17,7 +17,9 @@
 <link rel="stylesheet" href="css/css.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src="js/jquery.getimagedata.min.js"></script>
+<script src="js/functions.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
+
 
 </head> 
 
@@ -39,7 +41,7 @@
 </div>
 <div id="encode" class="content">
 	<input type="file" name="file" id="encode_file" />
-	<textarea name="text" id="text"></textarea>
+	<textarea name="text" id="encode_text"></textarea>
 	<input type="submit" name="submit" value="Submit" id="encode_submit" />
 
 	<div class="error" id="encode_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>
@@ -55,9 +57,11 @@
 
 	<div class="error" id="decode_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>
 
-	<div class="canvas-container">
+	<div class="canvas_container">
 		<canvas id="decode_image"></canvas>
 	</div>
+
+	<textarea name="text" id="decode_text"></textarea>
 </div>
 
 </body>
