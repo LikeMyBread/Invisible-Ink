@@ -8,36 +8,79 @@ html {
 }
 
 body {
-	background: #222;
+	background: #eee;
 	height: 100%;
 	min-height: 100%;
 	width:100%;
-	color: #fff;
+	color: #222;
+	font-size: 16px;
+	line-height: 24px;
 	font-family: 'Lato', sans-serif;
 }
 
+a, a:link, a:active {
+	text-decoration: none;
+	color: #222;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.big .blurb {
+	text-align: center;
+	width: 50%;
+	margin: auto;
+}
+
+.big {
+	font-size: 24px;
+	line-height: 30px;
+}
 
 .big h1 {
-	font-variant: small-caps;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 100px;
 	line-height: 160px;
 	font-weight: normal;
+	width: 100%;
+	text-align: center;
 }
 
 .big #navigation {
-
+	width: 60%;
+	margin: 50px 20%;
+	height: 200px;
 }
 
-.big .button {
+.big #navigation .button {
 	display: block;
-	cursor: pointer;
+	font-size: 50px;
+	letter-spacing: 2px;
 	float: left;
-	width: 200px;
+	cursor: pointer;
+	width: 46%;
+	margin: 0px 2%;
+	text-align: center;
+	height: 200px;
+	line-height: 200px;
+	background: #95a5a6;
+}
+
+.big #navigation .button:hover {
+	background: #34495e;
+	color: #fff;
+}
+
+.big #footer {
+	text-align: center;
+	font-size: 18px;
+	line-height: 24px;
+	display: block;
+	width: 100%;
 	height: 50px;
 }
-
 
 
 p {
