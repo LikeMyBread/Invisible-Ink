@@ -8,6 +8,7 @@ function DecodeContext () {
     var decode_handler = function () {
         var imageData = that.getImageData();
         var text = parseImage(imageData.data);
+        textarea.style.display = 'block';
         textarea.value = text;
         textarea.innerHTML = text;
     };
@@ -45,6 +46,7 @@ function EncodeContext () {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.putImageData(imageData, 0, 0);
+        download.style.display = 'block';
     };
 
     submit.addEventListener("click", encode_handler, false);

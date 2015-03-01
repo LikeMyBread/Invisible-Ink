@@ -7,13 +7,13 @@ function encode (r, g, b, character) {
     var b2 = b - (b % 8) + mBlue;
     var g2 = g - (g % 8) + mGreen;
     var r2 = r - (r % 8) + mRed;
-    if (mBlue < 4 && b2 + 8 < 255) {
+    if (mBlue < 5 && b2 + 8 < 255) {
         b2 += 8;
     }
-    if (mGreen < 4 && g2 + 8 < 255) {
+    if (mGreen < 5 && g2 + 8 < 255) {
         g2 += 8;
     }
-    if (mRed < 4 && r2 + 8 < 255) {
+    if (mRed < 5 && r2 + 8 < 255) {
         r2 += 8;
     }
     return ([r2, g2, b2]);
@@ -62,15 +62,3 @@ function parseImage (image) {
     }
     return message;
 }
-
-
-
-
-
-
-
-
-
-
-
-
