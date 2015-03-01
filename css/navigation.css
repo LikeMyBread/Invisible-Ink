@@ -1,57 +1,57 @@
 
 #main.big {
-	font-size: 24px;
-	line-height: 30px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 #main.big .blurb {
-	text-align: center;
-	width: 50%;
-	margin: auto;
+  text-align: center;
+  width: 50%;
+  margin: auto;
 }
 
 #main.big h1 {
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 100px;
-	line-height: 160px;
-	font-weight: normal;
-	width: 100%;
-	text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 100px;
+  line-height: 160px;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
 }
 
 #main.big #navigation {
-	width: 60%;
-	margin: 50px 20%;
-	height: 200px;
+  width: 60%;
+  margin: 50px 20%;
+  height: 200px;
 }
 
 #main.big #navigation .button {
-	display: block;
-	font-size: 50px;
-	letter-spacing: 2px;
-	float: left;
-	cursor: pointer;
-	width: 46%;
-	margin: 0px 2%;
-	text-align: center;
-	height: 200px;
-	line-height: 200px;
-	background: #95a5a6;
+  display: block;
+  font-size: 50px;
+  letter-spacing: 2px;
+  float: left;
+  cursor: pointer;
+  width: 46%;
+  margin: 0px 2%;
+  text-align: center;
+  height: 200px;
+  line-height: 200px;
+  background: #95a5a6;
 }
 
 #main.big #navigation .button:hover {
-	background: #34495e;
-	color: #fff;
+  background: #34495e;
+  color: #fff;
 }
 
 #main.big #footer {
-	text-align: center;
-	font-size: 18px;
-	line-height: 24px;
-	display: block;
-	width: 100%;
-	height: 50px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+  display: block;
+  width: 100%;
+  height: 50px;
 }
 
 #main.side {

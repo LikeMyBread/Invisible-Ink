@@ -29,7 +29,7 @@
 <body> 
 <div id="main" class="big">
 	<h1><a href="index.html">Invisible Ink</a></h1>
-	<p class="blurb">Hide text inside of images. Find hidden text inside of images. </p>
+	<p class="blurb">Hide text in images. Find hidden text in images. </p>
 
 	<div id="navigation">
 		<div class="button" id="encode_link">
@@ -43,8 +43,10 @@
 	<p id="footer">A project by <a href="http://mikebradley.me/">Mike Bradley</a> and <a href="http://tiffzhang.com/">Tiff Zhang</a>. See the source on <a href="https://github.com/LikeMyBread/Invisible-Ink">Github</a>. </p>
 </div>
 <div id="encode" class="content">
-	<input type="file" name="file" id="encode_file" />
-	<textarea name="text" id="encode_text"></textarea>
+	<div id = "imageholder">
+		<input type="file" name="file" id="encode_file" />
+	</div>
+	<textarea name="text" id="encode_text" placeholder="Your message goes here."></textarea>
 	<input type="submit" name="submit" value="Submit" id="encode_submit" />
 
 	<div class="error" id="encode_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>

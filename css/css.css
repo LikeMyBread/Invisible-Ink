@@ -32,14 +32,22 @@ p {
 }
 
 textarea {
-	width: 50%;
+	width: 40%;
 	height: 200px;
+	float: left;
 }
 
 input[type="submit"] {
 	border: none;
 	background: #95a5a6;
 	padding: 10px;
+	cursor: pointer;
+	width: 90%;
+}
+
+input[type="submit"]:hover {
+	background: #34495e;
+	color: #fff;
 }
 
 input[type="file"] {
@@ -62,4 +70,17 @@ input[type="file"] {
 	height: 100%;
 	box-sizing: border-box;
 	padding-left: 230px;
+}
+
+#decode_text, #download_encoded, #encode_image, #decode_image {
+	display: none;
+}
+
+#encode_file {
+	width: 100%;
+}
+
+#imageholder {
+	width: 40%;
+	float: left;
 }

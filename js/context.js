@@ -1,5 +1,5 @@
 function DecodeContext () {
-    that = new Context("decode", "decode_error", "decode_image", "decode_file",
+    var that = new Context("decode", "decode_error", "decode_image", "decode_file",
         "decode_submit", "decode_text");
 
     var submit = that.getSubmit();
@@ -8,6 +8,7 @@ function DecodeContext () {
     var decode_handler = function () {
         var imageData = that.getImageData();
         var text = parseImage(imageData.data);
+        textarea.style.display = 'block';
         textarea.value = text;
         textarea.innerHTML = text;
     };
@@ -18,7 +19,7 @@ function DecodeContext () {
 }
 
 function EncodeContext () {
-    that = new Context("encode", "encode_error", "encode_image", "encode_file",
+    var that = new Context("encode", "encode_error", "encode_image", "encode_file",
         "encode_submit", "encode_text");
 
     var submit = that.getSubmit();
@@ -45,6 +46,7 @@ function EncodeContext () {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.putImageData(imageData, 0, 0);
+        download.style.display = 'block';
     };
 
     submit.addEventListener("click", encode_handler, false);
