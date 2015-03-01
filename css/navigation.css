@@ -98,9 +98,17 @@
   background: #95a5a6;
 }
 
+#main.side #navigation .button.selected {
+  background: #798890;
+}
+
 #main.side #navigation .button:hover {
   background: #34495e;
   color: #fff;
+}
+
+#main #navigation a:hover {
+  text-decoration: none;
 }
 
 #main.side #footer {

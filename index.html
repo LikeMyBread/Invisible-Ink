@@ -30,12 +30,12 @@
 	<p class="blurb">Hide text in images. Find hidden text.</p>
 
 	<div id="navigation">
-		<div class="button" id="encode_link">
+		<a href="#encode" class="button" id="encode_link">
 			Encode
-		</div>
-		<div class="button" id="decode_link">
+		</a>
+		<a href="#decode" class="button" id="decode_link">
 			Decode
-		</div>
+		</a>
 	</div>
 
 	<p id="footer">A project by <a href="http://mikebradley.me/">Mike Bradley</a> and <a href="http://tiffzhang.com/">Tiff Zhang</a>. See the source on <a href="https://github.com/LikeMyBread/Invisible-Ink">Github</a>.</p>
@@ -46,7 +46,7 @@
 		<div class="thumbnail" id="encode_thumbnail"></div>
 	</div>
 	<textarea name="text" id="encode_text" placeholder="Your message goes here."></textarea>
-	<input type="submit" name="submit" value="Submit" id="encode_submit" />
+	<input type="submit" name="submit" value="Encode Image" id="encode_submit" />
 
 	<div class="error" id="encode_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>
 
@@ -54,14 +54,14 @@
 		<canvas id="encode_image"></canvas>
 	</div>
 
-	<a href="#" class="button" id="download_encoded">Download Image</a>
+	<a href="#" class="button" target="blank" id="download_encoded">Download Encoded Image</a>
 </div>
 
 <div id="decode" class="content">
 	<div id="decodebox">
 		<input type="file" name="file" id="decode_file" />
 		<div class="thumbnail" id="decode_thumbnail"></div>
-		<input type="submit" name="submit" value="Submit" id="decode_submit" />
+		<input type="submit" name="submit" value="Decode Image" id="decode_submit" />
 	<div>
 
 	<div class="error" id="decode_error"><noscript>You must have Javascript enabled to use this site! </noscript></div>
