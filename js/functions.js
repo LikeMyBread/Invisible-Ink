@@ -12,7 +12,7 @@ function encode (r, g, b, character) {
 
 //Extracts a stored character from a single pixel
 function decode (r, g, b, a) {
-    if (r % 8 > 4 || a == 0) {
+    if (r % 8 > 4 || a < 1) {
         return "";
     };
     mBlue = b % 8;
@@ -31,7 +31,8 @@ function nullOutR (r) {
 function applyMessage (message, image) {
     var j = 0;
     for (var i = 0; i < image.length / 4; i++) {
-        if (i < message.length && image[i * 4 + 3] != 0) {
+        image[i * 4 + 3] = 255; //makes the image opaque
+        if (j < message.length && image[i * 4 + 3] > 0) {
             newPixel = encode(image[i * 4], image[i * 4 + 1], image[i * 4 + 2], message[j]);
             image[i * 4] = newPixel[0];
             image[i * 4 + 1] = newPixel[1];

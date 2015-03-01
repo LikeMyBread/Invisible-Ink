@@ -25,10 +25,10 @@ window.onload = function (e) {
     var decode_link = document.getElementById("decode_link");
 
     var encode = new Context("encode", "encode_error", "encode_image", "encode_file",
-        "encode_submit", encode_handler, "download_encoded");
+        "encode_submit", encode_handler, "download_encoded", true);
 
     var decode = new Context("decode", "decode_error", "decode_image", "decode_file",
-        "decode_submit", decode_handler);
+        "decode_submit", decode_handler, false);
 
     encode_link.addEventListener("click", function (event) {
         menu.className = "side";
@@ -60,6 +60,7 @@ function Context (id, error_id, canvas_id, file_id, submit_id, submit_callback, 
             this.href = dataURL;
         });
     }
+
 
     file.addEventListener("change", function(event) {
         var file = this.files[0];
