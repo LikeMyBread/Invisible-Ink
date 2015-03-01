@@ -5,14 +5,15 @@ function DecodeContext () {
     var submit = that.getSubmit();
     var textarea = that.getTextarea();
 
-    submit.addEventListener("click", decode_handler, false);
-
     var decode_handler = function () {
         var imageData = that.getImageData();
         var text = parseImage(imageData.data);
         textarea.value = text;
         textarea.innerHTML = text;
     };
+
+    submit.addEventListener("click", decode_handler, false);
+
     return that;
 }
 
@@ -33,20 +34,21 @@ function EncodeContext () {
         this.href = dataURL;
     });
 
-    submit.addEventListener("click", encode_handler, false);
-
     var encode_handler = function () {
         var imageData = that.getImageData();
         var text = textarea.value;
         if (!text) {
             text = textarea.innerHTML;
         }
-
+        
         imageData.data = applyMessage(text, imageData.data);
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.putImageData(imageData, 0, 0);
     };
+
+    submit.addEventListener("click", encode_handler, false);
+
     return that;
 }
 
