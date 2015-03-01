@@ -1,5 +1,5 @@
 function DecodeContext () {
-    that = new Context("decode", "decode_error", "decode_image", "decode_file",
+    var that = new Context("decode", "decode_error", "decode_image", "decode_file",
         "decode_submit", "decode_text");
 
     var submit = that.getSubmit();
@@ -18,7 +18,7 @@ function DecodeContext () {
 }
 
 function EncodeContext () {
-    that = new Context("encode", "encode_error", "encode_image", "encode_file",
+    var that = new Context("encode", "encode_error", "encode_image", "encode_file",
         "encode_submit", "encode_text");
 
     var submit = that.getSubmit();
@@ -40,7 +40,7 @@ function EncodeContext () {
         if (!text) {
             text = textarea.innerHTML;
         }
-        
+
         imageData.data = applyMessage(text, imageData.data);
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
