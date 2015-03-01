@@ -55,9 +55,6 @@ input[type="file"] {
 	overflow: auto;
 }
 
-#decode_text {
-    display: none;
-}
 
 .content {
 	display: none;

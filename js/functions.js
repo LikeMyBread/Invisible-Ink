@@ -4,10 +4,19 @@ function encode (r, g, b, character) {
     mBlue = code % 8;
     mGreen = parseInt(code / 8) % 8;
     mRed = parseInt(code / 64) % 8;
-    b = b - (b % 8) + mBlue;
-    g = g - (g % 8) + mGreen;
-    r = r - (r % 8) + mRed;
-    return ([r, g, b]);
+    var b2 = b - (b % 8) + mBlue;
+    var g2 = g - (g % 8) + mGreen;
+    var r2 = r - (r % 8) + mRed;
+    if (mBlue < 4 && b2 + 8 < 255) {
+        b2 += 8;
+    }
+    if (mGreen < 4 && g2 + 8 < 255) {
+        g2 += 8;
+    }
+    if (mRed < 4 && r2 + 8 < 255) {
+        r2 += 8;
+    }
+    return ([r2, g2, b2]);
 }
 
 //Extracts a stored character from a single pixel
@@ -31,7 +40,7 @@ function nullOutR (r) {
 function applyMessage (message, image) {
     var j = 0;
     for (var i = 0; i < image.length / 4; i++) {
-        image[i * 4 + 3] = 255; //makes the image opaque
+        image[i * 4 + 3] = 255; //makes the image opaque :(
         if (j < message.length && image[i * 4 + 3] > 0) {
             newPixel = encode(image[i * 4], image[i * 4 + 1], image[i * 4 + 2], message[j]);
             image[i * 4] = newPixel[0];
