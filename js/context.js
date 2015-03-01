@@ -109,14 +109,16 @@ function Context (id, error_id, canvas_id, file_id, submit_id, text_id, thumbnai
         var reader = new FileReader();
         reader.onload = function(event){
             var img = new Image();
+            var img2 = new Image();
             img.onload = function(){
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
             }
             img.src = event.target.result;
+            img2.src = event.target.result;
             thumbnail.innerHTML = "";
-            thumbnail.appendChild(img);
+            thumbnail.appendChild(img2);
         }
         reader.readAsDataURL(e.target.files[0]);
     }
