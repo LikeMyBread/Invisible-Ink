@@ -81,12 +81,19 @@ input[type="file"] {
 	width: 90%;
 }
 
+#encode_text {
+	width: 50%;
+	height: 50%;
+	margin: 1px;
+	float: left;
+}
+
 #decode_submit {
   width: 90%;
 }
 
 #encode_file {
-	width: 100%;
+	width: 93%;
 }
 
 #decode_file {
@@ -121,7 +128,3 @@ input[type="file"] {
 	max-height: 50%;
 }
 
-#encode_text {
-	width: 49%
-	height: 100%;
-}
