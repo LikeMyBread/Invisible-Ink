@@ -33,7 +33,7 @@ p {
 
 textarea {
 	width: 40%;
-	height: 200px;
+	height: 250px;
 	float: left;
 }
 
@@ -72,15 +72,56 @@ input[type="file"] {
 	padding-left: 230px;
 }
 
-#decode_text, #download_encoded, #encode_image, #decode_image {
+#download_encoded, #encode_image, #decode_image {
 	display: none;
+}
+
+#decode_text {
+	display: none;
+	width: 90%;
+}
+
+#decode_submit {
+  width: 90%;
 }
 
 #encode_file {
 	width: 100%;
 }
 
+#decode_file {
+	float: left;
+	width: 40%;
+	height: 225px;
+}
+
 #imageholder {
 	width: 40%;
 	float: left;
+}
+
+.thumbnail {
+	width: 100%;
+	height: 100%;
+}
+
+.thumbnail img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#decode_thumbnail {
+	max-width: 40%;
+	max-height: 100%;
+	float: left;
+}
+
+#decodebox {
+	width: 100%;
+	max-height: 50%;
+}
+
+#encode_text {
+	width: 49%
+	height: 100%;
 }

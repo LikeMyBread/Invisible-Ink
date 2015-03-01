@@ -1,6 +1,6 @@
 function DecodeContext () {
     var that = new Context("decode", "decode_error", "decode_image", "decode_file",
-        "decode_submit", "decode_text");
+        "decode_submit", "decode_text", "decode_thumbnail");
 
     var submit = that.getSubmit();
     var textarea = that.getTextarea();
@@ -20,7 +20,7 @@ function DecodeContext () {
 
 function EncodeContext () {
     var that = new Context("encode", "encode_error", "encode_image", "encode_file",
-        "encode_submit", "encode_text");
+        "encode_submit", "encode_text", "encode_thumbnail");
 
     var submit = that.getSubmit();
     var textarea = that.getTextarea();
@@ -54,7 +54,7 @@ function EncodeContext () {
     return that;
 }
 
-function Context (id, error_id, canvas_id, file_id, submit_id, text_id) {
+function Context (id, error_id, canvas_id, file_id, submit_id, text_id, thumbnail_id) {
     var container = document.getElementById(id);
     var errorContainer = document.getElementById(error_id);
     var extensions = ['jpg', 'jpeg', 'png', 'gif'];
@@ -63,6 +63,7 @@ function Context (id, error_id, canvas_id, file_id, submit_id, text_id) {
     var submit = document.getElementById(submit_id);
     var ctx = canvas.getContext('2d');
     var textarea = document.getElementById(text_id);
+    var thumbnail = document.getElementById(thumbnail_id);
 
     this.getContainer = function () {
         return container;
@@ -114,6 +115,8 @@ function Context (id, error_id, canvas_id, file_id, submit_id, text_id) {
                 ctx.drawImage(img, 0, 0);
             }
             img.src = event.target.result;
+            thumbnail.innerHTML = "";
+            thumbnail.appendChild(img);
         }
         reader.readAsDataURL(e.target.files[0]);
     }
